@@ -3,6 +3,6 @@ network:
     ethernets:
         eth0:         
             nameservers:
-                    addresses: [192.168.61.4]
+                    addresses: [10.9.0.222, 10.9.1.243]
             dhcp4-overrides:
                     use-dns: false
