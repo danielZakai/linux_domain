@@ -20,10 +20,10 @@ steps:
     bandit -r setup.py
   workingDirectory: '$(Build.Repository.LocalPath)'
   displayName: 'Security check on harmless code'
-- script: |
-    bandit -r movie.py
-  workingDirectory: '$(Build.Repository.LocalPath)'
-  displayName: 'Security check on harmful code'
+#- script: |
+#    bandit -r movie.py
+#  workingDirectory: '$(Build.Repository.LocalPath)'
+#  displayName: 'Security check on harmful code'
 
 - script: |
     for file in ./*.py ;do bandit -r $file ;done
