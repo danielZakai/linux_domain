@@ -26,6 +26,6 @@ steps:
 #  displayName: 'Security check on harmful code'
 
 - script: |
-    for file in ./*.py ;do bandit -r $file ;done
+    for file in ./*.py ;do bandit -r $file ;done || exit 1
   workingDirectory: '$(Build.Repository.LocalPath)'
   displayName: 'All python files in directory'
