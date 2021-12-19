@@ -15,10 +15,20 @@ steps:
     sudo apt update
     sudo apt install -y python3 python3-pip
     pip3 install bandit
+  displayName: 'Install Bandit'
+- script: |
     bandit -r setup.py
   workingDirectory: '$(Build.Repository.LocalPath)'
   displayName: 'Security check on harmless code'
 - script: |
     bandit -r movie.py
   workingDirectory: '$(Build.Repository.LocalPath)'
-  displayName: 'Secuirty check on harmful code'
+  displayName: 'Security check on harmful code'
+
+- script: |
+    for file in ./*.py
+    do
+      bandit -r $file
+    done
+  workingDirectory: '$(Build.Repository.LocalPath)'
+  displayName: 'All python files in directory'
