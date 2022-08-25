@@ -27,7 +27,7 @@ steps:
   inputs:
     serviceConnectionEndpoint: 'snyk-free'
     testType: 'app'
-    targetFile: '/movie.py'
+    targetFile: '$(Build.Repository.LocalPath)/movie.py'
     monitorWhen: 'always'
     failOnIssues: true
     projectName: 'Code Analysis'
