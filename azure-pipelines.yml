@@ -27,8 +27,8 @@ steps:
   inputs:
     serviceConnectionEndpoint: 'snyk-free'
     testType: 'app'
+    targetFile: '/movie.py'
     monitorWhen: 'always'
     failOnIssues: true
     projectName: 'Code Analysis'
     organization: 'danielZakai'
-
