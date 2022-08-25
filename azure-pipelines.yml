@@ -25,6 +25,9 @@ steps:
   workingDirectory: '$(Build.Repository.LocalPath)'
   displayName: 'Harmless code'
 
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'
 - task: SnykSecurityScan@1
   inputs:
     serviceConnectionEndpoint: 'snyk-free'
