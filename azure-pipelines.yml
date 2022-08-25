@@ -15,11 +15,13 @@ steps:
 - script: |
     sudo apt update
     sudo apt install -y python3 python3-pip
+    sudo apt install git
     pip3 install bandit
   displayName: 'Install Bandit'
 
+
 - script: |
-    bandit -r setup.py
+    git clone https://github.com/danielZakai/linux_domain.git
   workingDirectory: '$(Build.Repository.LocalPath)'
   displayName: 'Harmless code'
 
@@ -27,7 +29,7 @@ steps:
   inputs:
     serviceConnectionEndpoint: 'snyk-free'
     testType: 'app'
-    targetFile: '$(Build.Repository.LocalPath)/movie.py'
+    targetFile: '$(Build.Repository.LocalPath)/linux_domain/movie.py'
     monitorWhen: 'always'
     failOnIssues: true
     projectName: 'Code Analysis'
